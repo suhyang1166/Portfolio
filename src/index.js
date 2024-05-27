@@ -13,9 +13,10 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-family: "G M";
-    margin: 0 auto;
     width: 100%;
+    margin: 0 auto;
     max-width: 1920px;
+    overflow-x: hidden;
   }
   ul,li {
     list-style: none
@@ -28,8 +29,8 @@ const GlobalStyle = createGlobalStyle`
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <GlobalStyle />
-    <App />
-  </BrowserRouter>
+    <BrowserRouter>
+        <GlobalStyle />
+        <App />
+    </BrowserRouter>
 );
