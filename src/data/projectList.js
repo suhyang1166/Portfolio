@@ -10,6 +10,16 @@ const projectList = [
     who: "개인",
   },
   {
+    id: 1,
+    projectNM: "02. 여기어때 클론코딩",
+    img: "",
+    skill: ["HTML", "CSS", "JS"],
+    text: "랜덤 배경화면 및 명언, 시간함수, 날씨 API 등을 사용하여 좀 더 기능적인 Todo-List 프로젝트입니다.",
+    site: "https://hereokay-project-sh.web.app/",
+    github: "https://github.com/suhyang1166/suhyang1166.github.io",
+    who: "개인",
+  },
+  {
     id: 2,
     projectNM: "02. 셀렉토커피 클론코딩",
     img: "",
