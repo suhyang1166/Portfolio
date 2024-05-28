@@ -7,69 +7,75 @@ import Header from "../components/Header";
 import styled from "styled-components";
 
 const Container = styled.div`
-    width: 100%;
-    max-width: 1920px;
+  width: 100%;
+  max-width: 1920px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 150px;
+  padding: 0 100px;
 `;
 
 const Contents = () => {
-    const aboutRef = useRef(null);
-    const projectRef = useRef(null);
-    const contactRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectRef = useRef(null);
+  const contactRef = useRef(null);
 
-    const location = useLocation();
+  const location = useLocation();
 
-    useEffect(() => {
-        if (location.state) {
-            const section = location.state.section;
-            if (section === "about") {
-                aboutRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            } else if (section === "project") {
-                projectRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            } else if (section === "contact") {
-                contactRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            }
-        }
-    }, [location]);
+  useEffect(() => {
+    if (location.state) {
+      const section = location.state.section;
+      if (section === "about") {
+        aboutRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else if (section === "project") {
+        projectRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      } else if (section === "contact") {
+        contactRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  }, [location]);
 
-    const sections = [
-        { name: "About", ref: aboutRef },
-        { name: "Project", ref: projectRef },
-        { name: "Contact", ref: contactRef },
-    ];
+  const sections = [
+    { name: "About", ref: aboutRef },
+    { name: "Project", ref: projectRef },
+    { name: "Contact", ref: contactRef },
+  ];
 
-    const onScrollToSection = (name) => {
-        const section = sections.find((section) => section.name === name);
-        if (section && section.ref.current) {
-            section.ref.current.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-        }
-    };
+  const onScrollToSection = (name) => {
+    const section = sections.find((section) => section.name === name);
+    if (section && section.ref.current) {
+      section.ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
-    return (
-        <Container>
-            <Header onScrollToSection={onScrollToSection} sections={sections} />
-            <div ref={aboutRef}>
-                <About />
-            </div>
-            <div ref={projectRef}>
-                <Project />
-            </div>
-            <div ref={contactRef}>
-                <Contact />
-            </div>
-        </Container>
-    );
+  return (
+    <Container>
+      <Header onScrollToSection={onScrollToSection} sections={sections} />
+      <div ref={aboutRef}>
+        <About />
+      </div>
+      <div ref={projectRef}>
+        <Project />
+      </div>
+      <div ref={contactRef}>
+        <Contact />
+      </div>
+    </Container>
+  );
 };
 
 export default Contents;
