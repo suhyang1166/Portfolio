@@ -64,7 +64,7 @@ const SkillWrap = styled.div`
 const SkillImgWrap = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 40px);
+  grid-template-columns: repeat(4, 40px);
   justify-content: flex-start;
   align-items: center;
   gap: 5px;
